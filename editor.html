@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>El editor de texto</title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="js/jquery-1.12.0.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/editor.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/editor.css">
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			$('#txt-content').Editor();
+
+			$('#txt-content').Editor('setText', ['<p style="color:gray;">Escriba su texto aqui</p>']);
+
+			$('#btn-enviar2').click(function (e) {
+				e.preventDefault();
+				var Texto = [];
+				//Texto = 
+			});
+		});
+
+	</script>
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<form action="prueba.php" method="post" id="frm-test">
+					<div class="form-group">
+						<textarea id="txt-content" name="txt-content"></textarea>
+					</div>
+				</form>
+				<button id="download-btn">Guardar</button>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script src="FileSaver.min.js"></script>
+<script>
+	document.getElementById("download-btn").addEventListener("click", function () {
+		var text = $('#txt-content').Editor('getText');
+		var filename = "Documento";//document.getElementById("filename").value;
+
+		var blob = new Blob([text], {
+			type: "text/plain;charset=utf-8"
+
+
+		});
+		saveAs(blob, filename);
+	}, false);
+
+</script>
+</html>

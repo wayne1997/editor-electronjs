@@ -1,0 +1,31 @@
+{
+  "name": "editortexto",
+  "version": "1.0.0",
+  "description": "Este es un editor de texto",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "Editor",
+    "texto",
+    "javascript"
+  ],
+  "author": "Jonathan Chiriboga",
+  "license": "ISC",
+  "build": {
+    "appId": "app1.4s5.gea",
+    "win": {
+      "target": "NSIS",
+      "icon": "/build/notepad.ico"
+    }
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    "electron-builder": "^22.8.0"
+  }
+}
